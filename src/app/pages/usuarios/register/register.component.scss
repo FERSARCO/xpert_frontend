@@ -1,0 +1,134 @@
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+  
+    .container {
+      text-align: center;
+  
+  
+      .imgLogo {
+        width: 70%;
+        height: auto;
+      }
+        .inputUser {
+        width: 50%;
+        margin: auto;
+        margin-top: 2vh;
+        border-radius: 10px;
+        border-color: #00cc99;
+        color: black;
+        font-size: 18px;
+      }
+  
+      .input_ver {
+        display: flex;
+        flex-direction: row-reverse !important;
+        align-items: center !important;
+        position: relative;
+        text-align: center;
+  
+        .labelVer {
+          margin: 0px;
+          position: absolute;
+          margin-top: 15px;
+          right: 27%;
+          cursor: pointer;
+          font-size: 20px;
+          color: #00cc99;
+          font-weight: 600;
+        }
+      }
+  
+      h4 {
+        align-self: center;
+        margin-bottom: 20px;
+      }
+  
+      button {
+        width: 50%;
+        margin: auto;
+        margin-top: 2vh;
+        background-color: #90ffcf;
+        border-radius: 15px;
+        color: white;
+        border-color: #90ffcf;
+        font-size: 15px;
+        font-weight: bold;
+      }
+  
+      button:hover {
+        width: 50%;
+        margin: auto;
+        margin-top: 2vh;
+        background-color: #00cc99;
+        color: white;
+      }
+  
+  
+      .img_algo {
+        width: 20%;
+        height: auto
+      }
+  
+      .loading {
+        margin-top: 50px;
+        text-align: center;
+  
+        h4 {
+          margin-top: 20px;
+        }
+      }
+  
+      .labels {
+        text-align: center;
+        margin-top: 0px;
+  
+        a {
+          cursor: pointer;
+          color: red;
+          text-decoration: underline;
+          margin-bottom: 10px;
+          padding: 1px;
+        }
+  
+        span {
+          margin: auto;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+  
+      .alerts {
+        margin: 15px;
+  
+        h5 {
+          width: 70%;
+          margin: auto;
+          text-align: center;
+          padding: 10px;
+          background-color: transparent;
+          border-radius: 15px;
+          border: red 1px solid;
+          color: red;
+        }
+      }
+  
+    }
+    .etiqueta{
+        font-size: 30px;
+        text-align: end;
+        color: blue;
+      }
+        .register{
+          margin-top: 10px;
+    cursor: pointer;
+    color: blue;
+  }
+  }
+

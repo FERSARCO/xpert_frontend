@@ -1,0 +1,57 @@
+<div class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-9 col-md-7">
+                <div class="content d-flex flex-column justify-content-center">
+                    <form class="custom-form" [formGroup]="formLogin">
+                        <div>
+                            <h4 class="register">REGISTRO DE USUARIO</h4>
+                            <div class="input_ver">
+                                <input type="text" class="form-control inputUser" #myinput formControlName="name"
+                                    placeholder="Nombre">
+                            </div>
+                            <div class="input_ver">
+                                <input type="text" class="form-control inputUser" #myinput formControlName="lastname"
+                                    placeholder="Apellido">
+                            </div>
+                            <div class="input_ver">
+                                <input type="text" class="form-control inputUser" #myinput formControlName="age"
+                                    placeholder="Años">
+                            </div>
+                            <div class="input_ver">
+                                <input type="text" class="form-control inputUser" #myinput formControlName="email"
+                                    placeholder="Correo">
+                            </div>
+                            <input type="text" class="form-control inputUser" formControlName="username"
+                                placeholder="Usuario">
+                            <div class="input_ver">
+                                <input type="text" class="form-control inputUser" #myinput formControlName="password"
+                                    placeholder="Contraseña">
+                            </div>
+                            <button class="btn btn-info btn-block" (click)="register()">REGISTRARSE</button>
+
+                            <h5 class="mt-4">¿No tienes cuenta? <a class="register" (click)="goToLogin()">Ir a login</a></h5>
+
+                        </div>
+                        <div *ngIf="cargando" class="loading">
+                            <div class="spinner-border"></div>
+                            <h4>Cargando</h4>
+                        </div>
+                    </form>
+                    <div class="alerts">
+                        <div *ngIf="!cargando && validaUsuario">
+                            <h5>El usaurio ya existe en la base de datos</h5>
+                        </div>
+                        <div *ngIf="!cargando && validaDatos">
+                            <h5>ingresar datos</h5>
+                        </div>
+                        <div *ngIf="!cargando && usuarioCreado">
+                            <h5>Usuario creado con exito</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

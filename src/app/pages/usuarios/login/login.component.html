@@ -1,0 +1,37 @@
+<div class="login">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-9 col-md-7">
+          <div class="content d-flex flex-column justify-content-center">
+            <form class="custom-form" [formGroup]="formLogin">
+              <div>
+                <h4 class="register">LOGIN PRUEBA TECNICA</h4>
+                <input type="text" class="form-control inputUser" formControlName="username" placeholder="Usuario">
+                <div class="input_ver">
+                  <input type="password" class="form-control inputUser" #myinput formControlName="password"
+                    placeholder="Contraseña">
+                </div>
+                <button class="btn btn-info btn-block" (click)="login()">INGRESAR</button>
+              </div>
+              <div *ngIf="cargando" class="loading">
+                <div class="spinner-border"></div>
+                <h4>Cargando</h4>
+              </div>
+            </form>
+            <div class="alerts">
+              <div *ngIf="!cargando && validaUsuario">
+                <h5>usuario o contraseña incorrecta</h5>
+              </div>
+              <div *ngIf="!cargando && validaDatos">
+                <h5>ingresar datos</h5>
+              </div>
+            </div>
+            <h5>¿No tienes cuenta?  <a class="register" (click)="goToRegister()">Registrate</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
