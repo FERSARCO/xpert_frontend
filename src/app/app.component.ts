@@ -14,7 +14,6 @@ export class AppComponent {
 
   constructor(private router: Router){}
   ngOnInit(): void {
-    // Redirigir al componente de login al iniciar la aplicación
-    this.router.navigate(['/register']);
+    this.router.navigate(['/login']);
   }
 }

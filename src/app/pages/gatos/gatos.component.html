@@ -1,1 +1,56 @@
-<p>gatos works!</p>
+<div class="container">
+  <label for="form-select">SELECCIONE RAZA</label>
+  <select class="form-select" id="sel" aria-label="Default select example" [formControl]="selectbreed"
+    (change)='getImagesByBreed()'>
+    <option hidden>Select Breed</option>
+    <option *ngFor="let gato of gatos" [value]="gato.id">{{gato.name}}</option>
+  </select>
+
+
+  <div *ngIf="!validaImagen">
+    <div class="m-3">
+      <input type="text" class="form-control" [formControl]="searchInput"  id="exampleFormControlInput1" placeholder="BUSCAR">
+      <button class="form-control btn btn-primary m-1" (click)="findBreed()">BUSCAR</button>
+    </div>
+    <table  class="table table-striped">
+      <thead class="thead">
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">ORIGIN</th>
+          <th scope="col">COUNTRY</th>
+          <th scope="col">INTELLIGENCE LEVEL</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let gato of newgatos ;let i = index">
+          <td>{{gato.name}}</td>
+          <td>{{gato.origin}}</td>
+          <td>{{gato.country_code}}</td>
+          <td>{{gato.intelligence}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="newgatos?.length==0">
+<h1>No existen resultados para la consulta</h1>
+    </div>
+  </div>
+
+  <div *ngIf="validaImagen" class="row">
+    <div class="col"*ngFor="let imagen of imagenes">
+      <div class="card mt-3" style="width: 18rem;">
+        <img [src]="imagen.url" class="card-img-top" width="25rem" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{this.breed[0].name}}</h5>
+          <p class="card-text">{{this.breed[0].description}}</p>
+          <a href="#" class="btn btn-primary" (click)="validaImagen=false">VER TODAS</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  </div>

@@ -71,8 +71,7 @@ export class LoginComponent implements OnInit {
       next:_=> {
         this.router.navigate(['/gatos']);
         this.cargando = false;
-       },
-      error: (error: any) => {
+       },error: (error: any) => {
         if(error.status===400){
           this.validaUsuario=true
         }else{
